@@ -26,7 +26,7 @@ public class UserController : ControllerBase
                 });
     }
 
-    [HttpPost("login")]
+    [HttpPost("Login")]
     public async Task<IActionResult> Login(LoginUsuarioDto input, CancellationToken cancellationToken)
     {
         await _UsuarioUseCase.Login(input, cancellationToken);
