@@ -14,7 +14,7 @@ public class UserController : ControllerBase
         _UsuarioUseCase = createUser;
     }
 
-    [HttpPost("cadastro")]
+    [HttpPost("Cadastro")]
     public async Task<IActionResult> RegisterUser(UsuarioInputDto input, CancellationToken cancellationToken)
     {
         var usuario = await _UsuarioUseCase.RegisterUser(input, cancellationToken);
