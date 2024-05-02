@@ -24,12 +24,7 @@ public class Filme
     public string Elenco { get; set; } = default!;
     public string Pais { get; set; } = default!;
     public int Ano { get; set; } = default!;
-    public int Avaliacao { get; private set; }
+    public int Avaliacao { get; set; }
 
-
-    public void SetAvaliação()
-    {
-        Avaliacao =+ 1;
-    }
 }
     

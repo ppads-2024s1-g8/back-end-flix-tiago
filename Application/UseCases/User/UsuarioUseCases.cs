@@ -49,24 +49,21 @@ public class UsuarioUseCases : IUsuarioUseCase
     {
         if(avaliacaoUsuarioDto.Tipo == "Filme")
         {
-            var filme = new Filme();
-            filme.SetAvaliação();
-            await _dbContext.Filme.AddAsync(filme, cancellationToken);
+            var getFilm = await _dbContext.Filme.FirstOrDefaultAsync(f => f.Id == avaliacaoUsuarioDto.Id);
+            getFilm!.Avaliacao++;
 
         }
 
         if (avaliacaoUsuarioDto.Tipo == "Serie")
         {
-            var serie = new Serie();
-            serie.SetAvaliação();
-            await _dbContext.Serie.AddAsync(serie, cancellationToken);
+            var getSerie = await _dbContext.Serie.FirstOrDefaultAsync(f => f.Id == avaliacaoUsuarioDto.Id);
+            getSerie!.Avaliacao++;
         }
 
         if (avaliacaoUsuarioDto.Tipo == "Livro")
         {
-            var livro = new Livro();
-            livro.SetAvaliação();
-            await _dbContext.Livro.AddAsync(livro, cancellationToken);
+            var getLivro = await _dbContext.Livro.FirstOrDefaultAsync(f => f.Id == avaliacaoUsuarioDto.Id);
+            getLivro!.Avaliacao++;
         }
 
 
