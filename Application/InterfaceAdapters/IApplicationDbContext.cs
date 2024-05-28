@@ -9,6 +9,9 @@ public interface IApplicationDbContext
     DbSet<Livro> Livro { get; }
     DbSet<Serie> Serie { get; }
     DbSet<Usuario> Usuario { get; }
+    
+    DbSet<Comentario> Comentario { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
 }

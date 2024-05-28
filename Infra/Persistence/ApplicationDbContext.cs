@@ -15,6 +15,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Livro> Livro => Set<Livro>();
     public DbSet<Serie> Serie => Set<Serie>();
     public DbSet<Usuario> Usuario => Set<Usuario>();
+    public DbSet<Comentario> Comentario => Set<Comentario>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -31,6 +32,9 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
         modelBuilder.Entity<Usuario>()
             .ToTable("usuario");
+
+        modelBuilder.Entity<Comentario>()
+            .ToTable("comentario");
 
 
         base.OnModelCreating(modelBuilder);
